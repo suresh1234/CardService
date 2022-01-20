@@ -10,9 +10,9 @@ import com.cardservice.pojo.ErrorHolder;
 @Service
 public class Validator {
 	/**
-	 * Method is responseible 
+	 * Method is responsible for validating the input parameters.  
 	 * @param cardInfo
-	 * @return
+	 * @return ErrorHolder
 	 */
 	public ErrorHolder validate(CardInfo cardInfo) {
 		ErrorHolder holder = null;
@@ -39,7 +39,11 @@ public class Validator {
 	public static String getSpaceTrimmedCardNumber(String cardNumber) {
 		return cardNumber.replaceAll("\\s+", "");
 	}
-	
+	/**
+	 * Method for null and empty check of string.
+	 * @param s
+	 * @return
+	 */
 	public static boolean isNullOrEmpty(String s) {
 		if (s == null || s.trim().isEmpty()) {
 			return true;
