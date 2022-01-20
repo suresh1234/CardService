@@ -1,0 +1,42 @@
+{
+	"variables": [],
+	"info": {
+		"name": "cardService",
+		"_postman_id": "6ac4454c-52ca-f05a-b401-5bab7e647bde",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getAllCards",
+			"request": {
+				"url": "http://localhost:8080/cardservice/getAllCards",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "addCard",
+			"request": {
+				"url": "http://localhost:8080/cardservice/addCard",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\n        \"name\": \"John Deo\",\n        \"creditCard\": \"371000717482575\",\n        \"limit\": 5001\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

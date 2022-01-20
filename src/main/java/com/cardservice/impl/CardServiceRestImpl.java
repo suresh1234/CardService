@@ -15,7 +15,7 @@ import com.cardservice.service.CardService;
 
 
 @Service
-public class CardServiceImpl implements ICardService{
+public class CardServiceRestImpl implements ICardService{
 	
 	@Autowired
 	private CardService cardService;
