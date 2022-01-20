@@ -38,15 +38,5 @@ public class Converter {
 		return entity;
 
 	}
-	
-	public CardInfo convertEntityToBo(CardInfoEntity cardInfoEntity) {
-		CardInfo result = new CardInfo();
-		if (Objects.nonNull(cardInfoEntity)) {
-			CardInfo cardInfo = new CardInfo();
-			cardInfo.setId(cardInfoEntity.getId()).setName(cardInfoEntity.getName()).setCreditCard(cardInfoEntity.getCardNo()).setBalance(cardInfoEntity.getBalance())
-					.setLimit(cardInfoEntity.getCardLimit());
-		}
-		return result;
-	}
 
 }

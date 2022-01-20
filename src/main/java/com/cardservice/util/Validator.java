@@ -58,7 +58,7 @@ public class Validator {
 	
 	private ErrorHolder validateCardNo(CardInfo cardInfo) {
 		if(!validateCardNoLunnAlgo(getSpaceTrimmedCardNumber(cardInfo.getCreditCard()))) {
-			return new ErrorHolder().setErroMessage("Card number is  not valid").setStatus(false);
+			return new ErrorHolder().setErroMessage(Constants.CAR_NO_NOT_VALID).setStatus(false);
 		}
 		return null;
 	}
@@ -66,7 +66,7 @@ public class Validator {
 	private ErrorHolder validateCardInput(CardInfo cardInfo) {
         boolean result = getSpaceTrimmedCardNumber(cardInfo.getCreditCard()).matches("[0-9]+");
         if(!result) {
-			return new ErrorHolder().setErroMessage("Card number does not contain all  numeric value").setStatus(false);
+			return new ErrorHolder().setErroMessage(Constants.CARD_NOT_NUMERIC).setStatus(false);
         }
 		return null;
 	}
@@ -74,8 +74,8 @@ public class Validator {
 	private ErrorHolder validateCardLength(CardInfo cardInfo) {
 		String cardNo = getSpaceTrimmedCardNumber(cardInfo.getCreditCard());
 		int length = cardNo.length();
-		if(!(length == 13 || length == 16 || length == 19)) {
-			return new ErrorHolder().setErroMessage("Card number is not is correct length.").setStatus(false);
+		if(length > 19) {
+			return new ErrorHolder().setErroMessage(Constants.CARD_LENGTH_ERROR).setStatus(false);
 
 		}
 		return null;
@@ -84,7 +84,7 @@ public class Validator {
 	private ErrorHolder valideCommonElements(CardInfo cardInfo) {
 		if (isNullOrEmpty(cardInfo.getCreditCard()) || isNullOrEmpty(cardInfo.getName())
 				|| Objects.isNull(cardInfo.getLimit())) {
-			return new ErrorHolder().setErroMessage("Either Card Number/Name/ Limit is not provided").setStatus(false);
+			return new ErrorHolder().setErroMessage(Constants.COMMON_FIELD_ERROR).setStatus(false);
 		}
 		return null;
 	}

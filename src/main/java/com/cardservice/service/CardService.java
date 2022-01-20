@@ -6,7 +6,6 @@ import java.util.Objects;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cardservice.entity.CardInfoEntity;
 import com.cardservice.jparepo.CardRepository;
 import com.cardservice.pojo.CardInfo;
 import com.cardservice.pojo.ErrorHolder;
@@ -22,9 +21,6 @@ public class CardService {
 	@Autowired
 	private Validator validator;
 	
-	public void save(CardInfoEntity entity) {
-		cardRepository.save(entity);
-	}
 	public ErrorHolder save(CardInfo cardInfo) {
 		ErrorHolder erroHolder = validator.validate(cardInfo);
 		 if(Objects.isNull(erroHolder)) {
