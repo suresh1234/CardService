@@ -32,7 +32,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "  {\n        \"name\": \"John Deo\",\n        \"creditCard\": \"371000717482575\",\n        \"limit\": 5001\n  }"
+					"raw": "  {\n        \"name\": \"James Deo\",\n        \"creditCard\": \"371000717482575\",\n        \"limit\": 5000\n  }"
 				},
 				"description": ""
 			},
