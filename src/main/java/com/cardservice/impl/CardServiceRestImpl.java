@@ -13,13 +13,21 @@ import com.cardservice.pojo.CardInfo;
 import com.cardservice.pojo.ErrorHolder;
 import com.cardservice.service.CardService;
 
+/**
+ * Implementation class for the rest service.
+ * 
+ * @author mac_osx
+ *
+ */
 
 @Service
 public class CardServiceRestImpl implements ICardService{
 	
 	@Autowired
 	private CardService cardService;
-
+	/**
+	 * Method is  for adding credit card into the system.
+	 */
 	@Override
 	public ResponseEntity<?> addCard(@RequestBody CardInfo cardInfo) {
 		ErrorHolder erroHolder = cardService.save(cardInfo);
@@ -29,7 +37,9 @@ public class CardServiceRestImpl implements ICardService{
 		return new ResponseEntity<>(erroHolder, HttpStatus.BAD_REQUEST);
 		
 	}
-
+	/**
+	 * Method for getting all  the cards present in the system.
+	 */
 	@Override
 	public ResponseEntity<?> getAllCards() {
 		return new ResponseEntity<>(cardService.getAll(), HttpStatus.OK);

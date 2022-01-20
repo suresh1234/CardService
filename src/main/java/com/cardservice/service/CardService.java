@@ -20,7 +20,11 @@ public class CardService {
 	private Converter converter;
 	@Autowired
 	private Validator validator;
-	
+	/**
+	 * Method is responsible for validating the inputs and saving the card info the DB.
+	 * @param cardInfo
+	 * @return ErrorHolder
+	 */
 	public ErrorHolder save(CardInfo cardInfo) {
 		ErrorHolder erroHolder = validator.validate(cardInfo);
 		 if(Objects.isNull(erroHolder)) {
@@ -29,6 +33,10 @@ public class CardService {
 		return erroHolder;
 	}
 	
+	/**
+	 * Method is responsible for returning  all  the available card present in the DB.
+	 * @return
+	 */
 	public List<CardInfo> getAll(){
 		return converter.convertEntityToBo(cardRepository.findAll());
 	}

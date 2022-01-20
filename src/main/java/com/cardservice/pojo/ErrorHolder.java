@@ -1,8 +1,19 @@
 package com.cardservice.pojo;
 
+/**
+ * Error holder object for keeping track of error and returning the same.
+ * @author mac_osx
+ *
+ */
 public class ErrorHolder {
-
+	/**
+	 * Error message 
+	 */
 	String erroMessage;
+	/**
+	 * status true indicate everythig is fine.
+	 * False indicate error condition.
+	 */
 	Boolean status;
 
 	public ErrorHolder() {

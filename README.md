@@ -21,10 +21,10 @@ Please follow below steps to run the service:
 
    ![alt text](https://github.com/suresh1234/CardService/blob/main/img/runningTheservice.png?raw=true)
    
-- Once application is up, import postman collection from location  CardService/cardService.postman_collection.json.
-  *collection has two request.
-    *One POST request for creating the Card info.
-    *One GET request  for retrieve all the cards. 
+- Once application is up,import postman collection from location  CardService/cardService.postman_collection.json.
+
+- Postman collection contains one GET and one POST request for testing the application:
+ 
   
 
 ![alt text](https://github.com/suresh1234/CardService/blob/main/img/postManCollection.png?raw=true)

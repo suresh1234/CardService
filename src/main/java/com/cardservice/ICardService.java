@@ -7,7 +7,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cardservice.pojo.CardInfo;
-
+/**
+ * Rest end point for card service interface.
+ * 
+ * @author mac_osx
+ *
+ */
 @RestController
 @RequestMapping("/cardservice")
 public interface ICardService {

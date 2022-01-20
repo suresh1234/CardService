@@ -12,7 +12,11 @@ import com.cardservice.pojo.CardInfo;
 
 @Service
 public class Converter {
-
+	/**
+	 * Method converts DB entity to the BO object.
+	 * @param listOfEntity
+	 * @return List of CardInfo
+	 */
 	public List<CardInfo> convertEntityToBo(List<CardInfoEntity> listOfEntity) {
 		List<CardInfo> result = new ArrayList<>();
 		if (Objects.nonNull(listOfEntity)) {
@@ -25,7 +29,11 @@ public class Converter {
 		}
 		return result;
 	}
-
+	/**
+	 * Method converts BO to DB entity.
+	 * @param cardInfo
+	 * @return CardInfoEntity
+	 */
 	public CardInfoEntity covertBoToEntity(CardInfo cardInfo) {
 		CardInfoEntity entity = null;
 		if (Objects.nonNull(cardInfo)) {

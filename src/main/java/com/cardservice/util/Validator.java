@@ -9,7 +9,11 @@ import com.cardservice.pojo.ErrorHolder;
 
 @Service
 public class Validator {
-	
+	/**
+	 * Method is responseible 
+	 * @param cardInfo
+	 * @return
+	 */
 	public ErrorHolder validate(CardInfo cardInfo) {
 		ErrorHolder holder = null;
 		if(Objects.nonNull(cardInfo)) {
@@ -27,7 +31,11 @@ public class Validator {
 		
 		return holder;
 	}
-	
+	/**
+	 * Method trims any spaces present in the the card number either in start/end or in between.
+	 * @param cardNumber
+	 * @return
+	 */
 	public static String getSpaceTrimmedCardNumber(String cardNumber) {
 		return cardNumber.replaceAll("\\s+", "");
 	}
@@ -38,7 +46,13 @@ public class Validator {
 		}
 		return false;
 	}
-	
+	/**
+	 * Method is responsible for validating the card number based on Luhn algorigthm.
+	 * https://en.wikipedia.org/wiki/Luhn_algorithm
+	 * 
+	 * @param cardNumber
+	 * @return boolean
+	 */
 	public boolean validateCardNoLunnAlgo(String  cardNumber) {
 		int sum = 0;
 		boolean alternate = false;
